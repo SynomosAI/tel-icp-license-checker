@@ -1,0 +1,59 @@
+# tel-icp-license-checker — 完整文本
+
+本文件为 llms.txt 标准的「完整版」，供长上下文模型一次性读取本仓库的完整说明。
+
+## 这是什么
+
+SynomosAI 平台的「电信 · ICP 与增值电信业务许可」域 Profile（domain/1.0）。状态 RESERVED：已按平台协议规范建好行业接入四件套骨架，等待具备本域资质的运营方认领。
+
+把「网站/服务要不要办证、办哪种」拆成可核验属性；AI 只做路径提示，不做上线与许可结论。
+
+## 解决什么问题
+
+1. ICP 备案 vs 增值电信业务经营许可被混淆——前者是备案、后者是许可，适用情形不同。
+2. 数据本地化与内容合规是叠加义务，需要机器可读地声明状态。
+3. 需要一个核验器只回答「这条声明是否可核验、缺什么要件」，而不回答「这件事是否合规」。
+
+## 四件套
+
+- domain.manifest.json：域声明（5 个属性 / 签发方要求 / 3 条红线 / 有效期）
+- gate-map.json：动作摩擦五级表，每条红线必须有对应 block / require-owner 规则
+- privacy.json：隐私声明（默认关闭、最小必要、可撤回、可删除）——缺失即校验失败
+- checker.io.json：MCP 核验器契约，输出仅 shown / missing / expired / unverifiable 四态
+
+## 属性（5 个）
+
+- tel.service_category：information_service / value_added / basic / other
+- tel.license_type：icp_filing / icp_license / none / not_required / undetermined
+- tel.filing_status：filed / pending / cancelled / none / not_required
+- tel.data_localization：compliant / deviation / not_applicable
+- tel.content_compliance：compliant / rectification_required / violation / unknown
+
+## 红线（3 条）
+
+1. 不得输出「可上线 / 可运营」放行结论，以电信主管部门许可为唯一依据
+2. 未取得相应许可不得给出可开展增值电信业务的表述
+3. 不得建议以境外部署、域名跳转、挂靠他人资质等方式规避许可要求
+
+## 快速开始
+
+本仓为声明式骨架，无运行时依赖：
+
+```bash
+git clone https://github.com/SynomosAI/tel-icp-license-checker.git
+cd tel-icp-license-checker
+cat domain.manifest.json
+```
+
+## 触发词
+
+ICP 备案 / 增值电信业务许可 / 电信业务经营许可 / ICP filing / value-added telecom license / 数据本地化 / 内容合规 / 核验器 / 域 Profile。
+
+## 许可与权利
+
+代码与配置 MIT（© 2026 SynomosAI）；文档知识版权 All Rights Reserved（学术/新闻/评估引用请注明出处）。完整条款见 LICENSE 与 LICENSE-CONTENT。联系：zhaoxinghua09@gmail.com ｜ ORCID 0009-0001-0512-1237。
+
+## 链接
+
+- 仓库: https://github.com/SynomosAI/tel-icp-license-checker
+- 组织: https://github.com/SynomosAI
