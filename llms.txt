@@ -1,0 +1,21 @@
+# tel-icp-license-checker
+
+> SynomosAI 域 Profile：电信 ICP 备案 vs 增值电信业务经营许可核验。声明式四件套骨架（domain/1.0），状态 RESERVED 待认领。核验器（MCP 工具）只出示出处链，不下合规结论。
+
+`tel-icp-license-checker` 把「网站/服务要不要办证、办哪种」拆成可核验属性：AI 只做路径提示，不做上线与许可结论。ICP 备案是备案、增值电信业务经营许可是许可，二者触发情形不同；数据本地化与内容合规是叠加义务。
+
+## 核心
+
+- [domain.manifest.json](https://github.com/SynomosAI/tel-icp-license-checker/blob/main/domain.manifest.json): 域声明（属性清单 / 签发方要求 / 红线 / 有效期）
+- [gate-map.json](https://github.com/SynomosAI/tel-icp-license-checker/blob/main/gate-map.json): 动作摩擦五级表（silent/warn/confirm/block/require-owner）
+- [privacy.json](https://github.com/SynomosAI/tel-icp-license-checker/blob/main/privacy.json): 隐私声明（准入条件）
+- [checker.io.json](https://github.com/SynomosAI/tel-icp-license-checker/blob/main/checker.io.json): MCP 核验器输入输出契约
+- [README.md](https://github.com/SynomosAI/tel-icp-license-checker/blob/main/README.md): 项目说明与快速开始
+
+## 可选
+
+- [AGENTS.md](https://github.com/SynomosAI/tel-icp-license-checker/blob/main/AGENTS.md): 给 AI Agent 的工作指引
+- [llms-full.txt](https://github.com/SynomosAI/tel-icp-license-checker/blob/main/llms-full.txt): 完整文本
+- [SECURITY.md](https://github.com/SynomosAI/tel-icp-license-checker/blob/main/SECURITY.md): 安全策略
+- [LICENSE](https://github.com/SynomosAI/tel-icp-license-checker/blob/main/LICENSE): 代码与配置 MIT
+- [LICENSE-CONTENT](https://github.com/SynomosAI/tel-icp-license-checker/blob/main/LICENSE-CONTENT): 文档知识版权 ARR（可注明出处引用）
